@@ -1,4 +1,4 @@
-package com.apress.ch05.sample01;
+package com.apress.ch05.sample02;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
