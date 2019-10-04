@@ -1,5 +1,7 @@
 package com.apress.ch05.sample01;
 
+import java.io.File;
+
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -13,7 +15,9 @@ public class OrderAppConfiguration implements EnvironmentAware {
 		String truststorePassword = environment.getProperty("server.ssl.key-store-password");
 
 		if (truststoreLocation != null && truststorePassword != null) {
-			System.setProperty("javax.net.ssl.trustStore", truststoreLocation);
+			String path = System.getProperty("user.dir");
+
+			System.setProperty("javax.net.ssl.trustStore", path + File.separator + truststoreLocation);
 			System.setProperty("javax.net.ssl.trustStorePassword", truststorePassword);
 		}
 
